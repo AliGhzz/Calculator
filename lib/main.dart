@@ -123,10 +123,20 @@ class _HomeState extends State<Home> {
                         onTapped: (){
                           setState(() {
                             if(mathExpr.length<61){
-                              mathExpr+=buttonsText[index][0];
-                              showingMathExpr+=buttonsText[index][1];
+                              if(mathExpr.length!=0 ){
+                                if(['*','+','/','%','-'].contains(mathExpr[mathExpr.length-1])){
+                                  mathExpr=mathExpr.substring(0,mathExpr.length-1);
+                                  showingMathExpr=showingMathExpr.substring(0,showingMathExpr.length-1);
+                                }
+                                mathExpr+=buttonsText[index][0];
+                                showingMathExpr+=buttonsText[index][1];
+                              }else{
+                                if(!['*','+','/','%'].contains(buttonsText[index][0])){
+                                  mathExpr+=buttonsText[index][0];
+                                  showingMathExpr+=buttonsText[index][1];
+                                }
+                              }
                             }
-                            
                           });
                         },
                       );
@@ -143,7 +153,7 @@ class _HomeState extends State<Home> {
   
   void calculate(String mathExpr){
     if(mathExpr!="" ){
-      if(['*','+','/','-'].contains(mathExpr[mathExpr.length-1])){
+      if(['*','+','/','-','%'].contains(mathExpr[mathExpr.length-1])){
         mathExpr=mathExpr.substring(0,mathExpr.length-1);
       }
       Parser p = Parser();
