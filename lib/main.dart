@@ -65,10 +65,12 @@ class _HomeState extends State<Home> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [ 
-                Container(height: 60,
-                alignment: Alignment.bottomRight,
-                padding: const EdgeInsets.fromLTRB(0,0,7,0),
-                  child: Text(answer,style: const TextStyle(fontSize:45,color: Colors.white),),
+                Container(
+                  height: 80,
+                  width: double.infinity,
+                  alignment: Alignment.bottomRight,
+                  padding: const EdgeInsets.fromLTRB(0,0,7,0),
+                  child: FittedBox(child: Text(answer,style: const TextStyle(fontSize:50,color: Colors.white),)),
                 ),
                 GridView.builder(
                   itemCount: 20,
@@ -160,7 +162,7 @@ class _HomeState extends State<Home> {
       Expression exp = p.parse(mathExpr);
       ContextModel cm = ContextModel();
       double eval = exp.evaluate(EvaluationType.REAL, cm);
-      final formatter = NumberFormat('#,##0.##########');
+      final formatter = NumberFormat("#,###.#########", "en_US");
       final formattedString = formatter.format(eval);
       answer= formattedString;
     }
