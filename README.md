@@ -1,9 +1,9 @@
 # Calculator
 <div style="display:flex;">
-    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/b665eb7e-99b9-49c0-8070-f9c82c016911" style="width:24%;">
-    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/e903b2c7-d29e-4ef2-9330-426a52ffadac" style="width:24%;">
-    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/44df177d-5083-4d92-95a4-f77b6678843d" style="width:24%;">
-    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/7d3b0e98-4573-4bca-b3e5-01fc71e50957" style="width:24%;">
+    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/57628885-3b3f-41dc-b6dd-c46c9083431f" style="width:24%;">
+    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/d7d758a2-396e-40dc-8a09-df0758f58fe8" style="width:24%;">
+    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/0d7c72b9-dc1a-4530-9b00-be1aade79197" style="width:24%;">
+    <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/38432c4d-5fc9-4630-b0d6-79e9b4b8d887" style="width:24%;">
 </div>
 
 
