@@ -18,8 +18,8 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(15)
         ),
         child: TextButton(
-          child: Text(label,style: TextStyle(color: textColor,fontSize: fontSize),),
           onPressed: onTapped,
+          child: Text(label,style: TextStyle(color: textColor,fontSize: fontSize),),
         ),
       ),
     );
