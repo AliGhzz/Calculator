@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.black12,
       body: Column(
         children: [
           SizedBox(
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                 alignment: Alignment.topLeft,
-                child: Text(showingMathExpr,style: const TextStyle(fontSize: 30)),
+                child: Text(showingMathExpr,style: const TextStyle(fontSize: 30,color: Colors.white)),
               )
             ),
           ),
@@ -61,14 +61,14 @@ class _HomeState extends State<Home> {
           Container(
             alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.all(5),
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [ 
                 Container(height: 60,
                 alignment: Alignment.bottomRight,
                 padding: const EdgeInsets.fromLTRB(0,0,7,0),
-                  child: Text(answer,style: const TextStyle(fontSize:45),),
+                  child: Text(answer,style: const TextStyle(fontSize:45,color: Colors.white),),
                 ),
                 GridView.builder(
                   itemCount: 20,
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                   shrinkWrap: true, 
                   itemBuilder: (context, index) {
                     if (index==0){
-                      return CustomButton(label:buttonsText[index][0],color: Colors.green,textColor: Colors.white,fontSize: 20.0,
+                      return CustomButton(label:buttonsText[index][0],color: Colors.blue,textColor: Colors.white,fontSize: 20.0,
                         onTapped: (){
                           setState(() {
                             mathExpr='';
@@ -91,23 +91,27 @@ class _HomeState extends State<Home> {
                       return CustomButton(label:buttonsText[index][0],color: Colors.red,textColor: Colors.white,fontSize: 20.0,
                         onTapped: (){
                           setState(() {
-                            mathExpr=mathExpr.substring(0,mathExpr.length-1);
-                            showingMathExpr=showingMathExpr.substring(0,showingMathExpr.length-1);
-                          });
-                        },
-                      );
-                    }else if([4,5,6,8,9,10,12,13,14,16,17,18].contains(index)){
-                      return CustomButton(label:buttonsText[index][0],color: Colors.deepPurple[50],textColor: Colors.deepPurple ,fontSize: 20.0,
-                        onTapped: (){
-                          setState(() {
-                            mathExpr+=buttonsText[index][0];
-                            showingMathExpr+=buttonsText[index][0];
+                            if(mathExpr.length<61){
+                              mathExpr=mathExpr.substring(0,mathExpr.length-1);
+                              showingMathExpr=showingMathExpr.substring(0,showingMathExpr.length-1);
+                            }
                             
                           });
                         },
                       );
+                    }else if([4,5,6,8,9,10,12,13,14,16,17,18].contains(index)){
+                      return CustomButton(label:buttonsText[index][0],color: Colors.white,textColor: Colors.black ,fontSize: 20.0,
+                        onTapped: (){
+                          setState(() {
+                            if(mathExpr.length<61){
+                              mathExpr+=buttonsText[index][0];
+                              showingMathExpr+=buttonsText[index][0];
+                            }
+                          });
+                        },
+                      );
                     }else if(index==19){
-                      return CustomButton(label:buttonsText[index][1],color: Colors.deepPurple,textColor: Colors.white,fontSize: 25.0,
+                      return CustomButton(label:buttonsText[index][1],color: Colors.green,textColor: Colors.white,fontSize: 25.0,
                         onTapped: (){
                           setState(() {
                             calculate(mathExpr);
@@ -115,11 +119,14 @@ class _HomeState extends State<Home> {
                         },
                       );
                     }else{
-                      return CustomButton(label:buttonsText[index][1],color: Colors.deepPurple,textColor: Colors.white,fontSize: 25.0,
+                      return CustomButton(label:buttonsText[index][1],color: Colors.orange,textColor: Colors.white,fontSize: 25.0,
                         onTapped: (){
                           setState(() {
-                            mathExpr+=buttonsText[index][0];
-                            showingMathExpr+=buttonsText[index][1];
+                            if(mathExpr.length<61){
+                              mathExpr+=buttonsText[index][0];
+                              showingMathExpr+=buttonsText[index][1];
+                            }
+                            
                           });
                         },
                       );
