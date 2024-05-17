@@ -1,4 +1,4 @@
-🔢Calculator
+<h1> 🔢Calculator </h1>
 <div style="display:flex;">
     <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/57628885-3b3f-41dc-b6dd-c46c9083431f" style="width:24%;">
     <img src="https://github.com/AliGhzz/simple_caclulator/assets/77566367/d7d758a2-396e-40dc-8a09-df0758f58fe8" style="width:24%;">
